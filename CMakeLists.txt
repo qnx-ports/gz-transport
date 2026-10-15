@@ -40,7 +40,7 @@ gz_configure_project(VERSION_SUFFIX)
 
 # gz-transport currently has no options that are unique to it
 
-if (UNIX AND NOT APPLE)
+if (UNIX AND NOT APPLE AND NOT CMAKE_SYSTEM_NAME STREQUAL "QNX")
   set (EXTRA_TEST_LIB_DEPS stdc++fs)
 else()
   set (EXTRA_TEST_LIB_DEPS)
